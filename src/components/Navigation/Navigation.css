@@ -1,0 +1,88 @@
+.navigation{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation__link{
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    color: #000000;
+    margin-left: 20px;
+    text-decoration: none;
+    box-shadow: 0px 20px 40px 0px rgba(255, 255, 255, 0);
+    transition: box-shadow ease-out 0.3s;
+}
+
+.navigation__link:hover{
+    box-shadow: 0px 2px 0px 0px rgba(7, 48, 66, 1);
+}
+
+.navigation__link_active{
+    font-weight: 500;
+}
+
+.navigation__link_main{
+    color: #ffffff;
+    box-shadow: 0px 20px 30px 0px rgba(7, 48, 66, 0);
+}
+
+.navigation__link_main:hover, .navigation__link_profile-main:hover{
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.navigation__link_signin{
+    width: 76px;
+    height: 32px;
+    background-color: #2BE080;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 2;
+    padding: 0;
+    margin: 0 0 0 30px;
+    font-weight: 500;
+}
+
+.navigation__link_profile{
+    background: #FFFFFF;
+    box-shadow: 0px 3px 14px rgb(0 0 0 / 8%);
+    border-radius: 40px;
+    width: 100px;
+    height: 32px;
+    padding: 0 0 0 11px;
+    background-image: url('../../images/profile-icon_bg.svg');
+    background-repeat: no-repeat;
+    background-position-x: 81px;
+    background-position-y: 4px;
+    margin: 0 0 0 50px;
+    line-height: 2;
+    font-weight: 500;
+    text-align: left;
+}
+
+.navigation__link_profile-main{
+    box-shadow: 0px 20px 40px 0px rgba(7, 48, 66, 0);
+    background: #073042;
+    border: 2px solid #F5F5F5;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 109px;
+    height: 32px;
+    padding: 0 10px 0 0;
+    background-image: url('../../images/profile-icon_bg-main.svg');
+    background-repeat: no-repeat;
+    background-position-x: 12px;
+    background-position-y: 6px;
+    margin: 0 0 0 41px;
+    line-height: 1.7;
+    font-weight: 500;
+    text-align: right;
+    color: #ffffff;
+    
+}
+
+.navigation__link:hover{
+    box-shadow: #ffffff;
+}
