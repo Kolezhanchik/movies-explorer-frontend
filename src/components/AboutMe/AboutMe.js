@@ -1,11 +1,10 @@
 import React from 'react';
-import profilePic from '../../images/profile-pic-my.jpg'
+import profilePic from '../../images/profile-pic.png'
 import './AboutMe.css';
 
 function AboutMe() {
     return (
         <section id="AboutMe" className="about-me" >
-            <div className="about-me__wrap">
                 <h2 className="about-me__title">Студент</h2>
                 <div className="about-me__full">
                     <div className="about-me__info">
@@ -34,7 +33,6 @@ function AboutMe() {
                     </div>
                     <img src={profilePic} alt="Фото профайла" className="about-me__img" />
                 </div>
-            </div>
         </section >
     );
 }

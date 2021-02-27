@@ -1,7 +1,7 @@
 .search-form{
     display: flex;
     padding: 19px 30px 19px 60px ;
-    margin: 0;
+    margin: 0 0 70px;
     background: #FDFDFD;
     box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
     border-radius: 9px;
@@ -68,6 +68,7 @@
     margin: 0 25px 0 auto;
     position: relative;
     transition: opacity ease-in-out 0.4s;
+    outline: none;
 }
 
 .search-form__btn::after{
@@ -136,4 +137,74 @@
 .search-form__label .search-form__checkbox:checked ~ .search-form__checkmark::after{
     background: #ffffff;
     left: 16px; 
+}
+
+@media screen and (max-width: 740px){
+    .search-form__input{
+        max-width: 30%;
+    }
+
+    .search-form__checkmark {
+        margin-left: 0;
+    }
+
+    ::placeholder {
+        font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #A0A0A0;
+      }
+      
+      .search-form__input {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+      :-ms-input-placeholder { 
+        font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #A0A0A0;
+      }
+      
+      ::-ms-input-placeholder { 
+        font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #A0A0A0;
+      }
+}
+
+@media screen and (max-width: 540px) {
+    .search-form{
+       position: relative;
+       background-image: none;
+       padding-left: 19px;
+       padding-right: 19px;
+       margin-bottom: 108px;
+    }
+
+    .search-form__btn {
+        margin: 0 0 0 auto;
+    }
+
+
+
+    .search-form__label_checkbox{
+        position: absolute;
+        bottom: -72px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        justify-content: center;
+        font-size: 11px;
+    }
+
+  
 }

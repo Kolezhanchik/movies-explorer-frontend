@@ -1,19 +1,24 @@
 .header{
     width: auto;
     margin: 0; 
-    padding: 18px 70px;  
+    padding: 0;
 }
 
 .header_main{
     background-color: #073042;
     color: #ffffff;
 }
+
+.header__empty{
+    min-height: 75px;
+}
+
 .header__content{
     width: 1280px;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
-    padding: 0;
+    padding: 18px 70px; 
     justify-content: space-between;
 }
 
@@ -25,9 +30,76 @@
 .header__logo:hover{
     box-shadow: 0px 2px 0px 0px rgba(7, 48, 66, 1);
 }
-@m
+
+.header__navigation-mob, .header__navigation-mob_disabled{
+    padding: 0;
+    margin: 0;    
+    width: auto;
+    height: auto;
+    transition: all ease-in-out 2s;
+}
+
+.header__btn{
+    border: none;
+    background: transparent;
+    outline: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-size: 54px;
+    line-height: 0;
+    display: none;
+}
+
+.header__btn_main{
+    color: #ffffff;
+}
+
 @media screen and (max-width: 1280px) {
-    .header{        
+    .header__content{        
         padding: 18px 30px;
     }    
+}
+
+@media screen and (max-width: 768px) {
+    .header__navigation-mob{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 3;        
+    }  
+
+    .header__navigation-mob_disabled{
+        display: none;
+    }  
+
+    .header__btn{
+        display: block;
+    }
+
+    .header__btn_close {
+        z-index: 4;
+        position: absolute;
+        right: 23px;
+        top: 31px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header__content{
+        padding: 18px 33px 18px 14px;
+    }
+
+    .header__btn{
+        font-size: 42px;
+    }
+
+    .header__btn_close {        
+        font-size: 22px;
+    }
 }

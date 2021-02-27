@@ -1,9 +1,6 @@
 @import url('./vendor/fonts/fonts.css');
 @import url('./vendor/normalize.css');
 
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   margin: 0;

@@ -1,11 +1,10 @@
-//https://api.nomoreparties.co/beatfilm-movies
 import React from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import tempCardsData from '../../utils/tempData.json';
-import './Movies.css'
+import tempCardsData from '../../utils/tempSavedData.json';
+import './SavedMovies.css'
 
-function Movies(props) {
+function SavedMovies(props) {
     return (
         <section className="movies">
             <SearchForm />
@@ -16,4 +15,4 @@ function Movies(props) {
     );
 }
 
-export default Movies;
+export default SavedMovies;

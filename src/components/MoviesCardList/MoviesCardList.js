@@ -1,23 +1,32 @@
-import React from 'react';
-// import MoviesCard from '../MoviesCard';
+import React, { useState } from 'react';
+import MoviesCard from '../MoviesCard/MoviesCard';
+// import Preloader from '../Preloader/Preloader';
 import './MoviesCardList.css';
 
 
 function MoviesCardList(props) {
-    let count = 12;
-    // async function getMovies(){
-    //     let response = await fetch('https://api.nomoreparties.co/beatfilm-movies'); // завершается с заголовками ответа
-    //     let result = await response.json();
-    //     result.map((item) => {
-    //         console.log(item.image.url);
-    //     } )
-        
-    // }
-    // getMovies();
+    const [count, setCount] = useState(12);
+
     return (
-        <div className="movies">
-<img src="/uploads/667708311_1280x720_558f3de42b.jpeg" alt=""/>
-        </div>
+        <section className="movies-list">
+           {/* <Preloader/> || */}
+            <div className="movies-list__cards">
+                {
+                    props.tempCardsData.slice(0, count).map((item) => {
+                        return (
+                            <MoviesCard
+                                key={item.id}
+                                name={item.nameRU}
+                                image={item.image.url}
+                                duration={item.duration}
+                            />
+                        )
+                    })
+                     
+                }
+            </div>             
+            {props.tempCardsData.length > count && <button onClick={() => setCount(count + 6)} className="movies-list__btn">Ещё</button>}
+        </section>
     );
 }
 

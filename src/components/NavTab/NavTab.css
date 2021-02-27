@@ -4,13 +4,14 @@
     background-color: #073042;
     list-style: none;
     position: absolute;
-    left: 130px;
+    left: 128px;
     bottom: 0;
     margin: 0;
     padding: 0;
     opacity: 1;
     transition: opacity ease-in-out 1.3s;
     display: flex;
+    max-height: fit-content;
 }
 
 .navtab_none{
@@ -48,9 +49,24 @@
     font-size: 0;
 }
 
-@media screen and (max-width: 580px) {
+ @media screen and (max-width: 780px) {
     .navtab{
         left: 0;
-        bottom: 60px;
+        bottom: -40px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .navtab{
+        left: -145px;
+    }
+} 
+
+@media screen and (max-width: 375px) {
+    .navtab{
+        flex-direction: column;
+        top: -148px;
+        left: 5px;
+        background-color: rgba(7, 48, 66, 0.7);
+    }
+} 

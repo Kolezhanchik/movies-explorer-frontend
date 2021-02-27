@@ -1,11 +1,8 @@
 .about-me{
-    padding: 90px 70px;
-    margin: 0;
-}
-.about-me__wrap{
+    padding: 110px 70px 50px;
     max-width: 1280px;
-    padding: 0;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .about-me__full{
@@ -61,11 +58,11 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 1.5;
     color: #000000;
     padding: 13px 0 49px;
     margin: 0;
-    max-width: 550px;
+    max-width: 595px;
 }
 
 .about-me__socials{
@@ -95,13 +92,88 @@
 }
 
 .about-me__img{
-    max-width: 270px;
+    width: 270px;
     height: 327px;
     border-radius: 10px;
+    max-width: 50%;
 }
 
 @media screen and (max-width: 1280px) {
     .about-me{        
         padding:  110px 30px;
     }    
+}
+
+@media screen and (max-width: 768px){
+    .about-me {
+        padding: 90px 50px 50px;
+    }
+
+    .about-me__subtitle{
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .about-me__prof{
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .about-me__text{
+        font-size: 12px;
+        line-height: 18px;
+        padding: 2px 0 37px;
+        max-width: 355px;
+    }
+
+    .about-me__img{
+        width: 255px;
+        max-height: 307px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .about-me {
+        padding: 60px 14px 50px;
+    }
+
+    .about-me__title {
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 27px;
+    }
+    
+    .about-me__full {
+        flex-direction: column-reverse;
+        padding-top: 60px;
+    }
+
+    .about-me__img {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .about-me__subtitle {
+        font-size: 30px;
+        line-height: 36px;
+        padding: 40px 0 0;
+    }
+
+    .about-me__prof {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 20px 0;
+    }
+
+    .about-me__text {
+        font-size: 11px;
+        line-height: 16px;
+        max-width:100%;
+    }
+
+    .about-me__socials {
+        padding: 0;
+    }
+
 }
