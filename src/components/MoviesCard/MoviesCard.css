@@ -6,6 +6,13 @@
     border-radius: 6px;
     align-self: center;
     justify-self: center;
+    transition: all ease-in-out 0.5s;
+}
+
+.movies-card:hover{
+    box-shadow: 6px 6px 11px rgb(0 0 0 / 39%);
+    transform: scale(1.015);
+    cursor: pointer;
 }
 
 .movies-card__image{
@@ -81,13 +88,11 @@
     cursor: pointer;
 }
 
-.movies-card__wrap:hover .movies-card__liked,  
-.movies-card__wrap:hover .movies-card__not-liked{
-    cursor: pointer;
+.movies-card:hover .movies-card__not-liked{
     animation: beating 1s ease-in-out infinite;
 }
 
-.movies-card__wrap:hover .movies-card__unlike {
+.movies-card:hover .movies-card__unlike {
     display: block;
 }
 

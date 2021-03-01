@@ -10,7 +10,7 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import PageNotFound from '../PageNotFound/PageNotFound';
-
+import ErrorsModal from '../ErrorsModal/ErrorsModal';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -65,6 +65,7 @@ function App() {
         || location.pathname === '/saved-movies')
         && <Footer />}
       {scrollPage > 200 && <button className="app__up-btn" onClick={() => { window.scrollTo({ top: 0 }) }}>&#8593;</button>}
+      <ErrorsModal/>
     </div>
   );
 }
