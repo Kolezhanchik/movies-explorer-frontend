@@ -6,6 +6,8 @@ import './MoviesCard.css';
 function MoviesCard(props) {
     const [isLiked, setIsLiked] = useState(false);
     const location = useLocation();
+    
+   
     return (
         <div className="movies-card">
             <img className="movies-card__image" src={props.image} alt={props.name} />

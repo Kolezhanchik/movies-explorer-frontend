@@ -77,11 +77,11 @@
     }    
 }
 
-@media screen and (max-width: 1120px) {
-    .promo__wrap{       
-        background-position-x: 97%;
-        background-position-y: 93%;
-    }  
+@media screen and (max-width: 1120px){
+.promo__wrap {
+        background-position-x: 92%;
+        background-position-y: 62%;
+    }
 }
 
 @media screen and (max-width: 768px) {

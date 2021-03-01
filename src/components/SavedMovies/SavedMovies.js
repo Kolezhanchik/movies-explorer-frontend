@@ -10,6 +10,7 @@ function SavedMovies(props) {
             <SearchForm />
             <MoviesCardList
                 tempCardsData={tempCardsData}
+                imageUrl={''}
             />
         </section>
     );

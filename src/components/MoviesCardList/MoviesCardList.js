@@ -9,7 +9,7 @@ function MoviesCardList(props) {
 
     return (
         <section className="movies-list">
-           {/* <Preloader/> || */}
+            {/* <Preloader/> || */}
             <div className="movies-list__cards">
                 {
                     props.tempCardsData.slice(0, count).map((item) => {
@@ -17,14 +17,15 @@ function MoviesCardList(props) {
                             <MoviesCard
                                 key={item.id}
                                 name={item.nameRU}
-                                image={item.image.url}
+                                // image={`https://api.nomoreparties.co${item.image.url}`}
+                                image={props.imageUrl.concat(item.image.url)}
                                 duration={item.duration}
                             />
                         )
                     })
-                     
+
                 }
-            </div>             
+            </div>
             {props.tempCardsData.length > count && <button onClick={() => setCount(count + 6)} className="movies-list__btn">Ещё</button>}
         </section>
     );

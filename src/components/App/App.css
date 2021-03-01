@@ -1,3 +1,42 @@
 .App {
   text-align: left;
 }
+
+
+.app__up-btn{
+  position: sticky;
+  width: 50px;
+  height: 58px;
+  background-color: #073042bf;
+  bottom: 5%;
+  right: 10%;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 0 0 0 auto;
+  display: block;
+  transition: all ease-in-out 0.3s;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.app__up-btn:hover{
+  cursor: pointer;
+  animation: up 2s ease-in-out infinite;
+}
+
+@keyframes up {
+  0% {
+      transform: translateY(0);
+      box-shadow: none;
+  }
+  50% {
+      transform: translateY(-15px);
+      box-shadow: 1px 4px 5px 4px #0730423d;
+  }
+  100% {
+      transform: translateY(0);
+      box-shadow: none;
+  }
+}

@@ -168,7 +168,9 @@
 
 @media screen and (max-width: 420px) {
     .profile-form{
-        max-width: 85%;
-        
+        max-width: 85%;        
+    }
+    .profile-form__submit{
+        max-width: 100%; 
     }
 }

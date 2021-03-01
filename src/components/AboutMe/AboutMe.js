@@ -32,7 +32,7 @@ function AboutMe() {
                         </ul>
                     </div>
                     <img src={profilePic} alt="Фото профайла" className="about-me__img" />
-                </div>
+                </div>                
         </section >
     );
 }
