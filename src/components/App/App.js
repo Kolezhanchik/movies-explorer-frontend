@@ -16,16 +16,16 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const location = useLocation();
 
-  const [scrollPage, setScrollPage] = useState(0);
+  // const [scrollPage, setScrollPage] = useState(0);
 
-  useEffect(() => {
-    function handleScroll() {
-      setScrollPage(window.pageYOffset);
-    }
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollPage]);
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     setScrollPage(window.pageYOffset);
+  //   }
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [scrollPage]);
 
   return (
     <div className="App">
@@ -64,7 +64,7 @@ function App() {
         || location.pathname === '/movies'
         || location.pathname === '/saved-movies')
         && <Footer />}
-      {scrollPage > 200 && <button className="app__up-btn" onClick={() => { window.scrollTo({ top: 0 }) }}>&#8593;</button>}
+      {/* {scrollPage > 200 && <button className="app__up-btn" onClick={() => { window.scrollTo({ top: 0 }) }}>&#8593;</button>} */}
       <ErrorsModal/>
     </div>
   );

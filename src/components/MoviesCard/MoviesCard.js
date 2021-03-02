@@ -26,7 +26,7 @@ function MoviesCard(props) {
                 </button>) : <button
                         onClick={() => setIsLiked(!isLiked)}
                         className={"movies-card__like movies-card__unlike"}>
-                        &#9932;
+                        
                 </button>
                 }
             </div>

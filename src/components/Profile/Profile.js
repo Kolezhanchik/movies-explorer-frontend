@@ -14,7 +14,7 @@ function Profile(props) {
         <form className="profile-form">
             <h1 className="profile-form__title">Привет, {props.name}!</h1>
             <label className="profile-form__label">
-                Имя
+                <span className="profile-form__text">Имя</span>
                 <input
                     disabled={disabled}
                     minLength={2}
@@ -23,7 +23,9 @@ function Profile(props) {
                     required
                     value={name}
                     onChange={(e) => { setName(e.target.value); setNameErrorMessage(e.target.validationMessage) }}
-                    className="profile-form__input"
+                    className={nameErrorMessage ?
+                        "profile-form__input profile-form__input_invalid"
+                        : "profile-form__input"}
                 />
                 <span
                     className={nameErrorMessage ?
@@ -31,14 +33,16 @@ function Profile(props) {
                         : "profile-form__err-msg"}>{nameErrorMessage}</span>
             </label>
             <label className="profile-form__label">
-                Почта
+                <span className="profile-form__text">Почта</span>
                 <input
                     disabled={disabled}
                     type="email"
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
-                    className="profile-form__input"
+                    className={mailErrorMessage ?
+                        "profile-form__input profile-form__input_invalid"
+                        : "profile-form__input"}
                 />
                 <span
                     className={mailErrorMessage ?

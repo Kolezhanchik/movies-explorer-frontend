@@ -25,7 +25,9 @@ function Register(props) {
                     required
                     value={name}
                     onChange={(e) => { setName(e.target.value); setNameErrorMessage(e.target.validationMessage) }}
-                    className="registration-form__input"
+                    className={nameErrorMessage ?
+                        "registration-form__input registration-form__input_invalid"
+                        : "registration-form__input"}
                 />
                 <span
                     className={nameErrorMessage ?
@@ -39,7 +41,9 @@ function Register(props) {
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
-                    className="registration-form__input"
+                    className={mailErrorMessage ?
+                        "registration-form__input registration-form__input_invalid"
+                        : "registration-form__input"}
                 />
                 <span
                     className={mailErrorMessage ?
@@ -55,7 +59,9 @@ function Register(props) {
                     required
                     value={password}
                     onChange={(e) => { setPassword(e.target.value); setPassErrorMessage(e.target.validationMessage) }}
-                    className="registration-form__input"
+                    className={passErrorMessage ?
+                        "registration-form__input registration-form__input_invalid"
+                        : "registration-form__input"}
                 />
                 <span
                     className={passErrorMessage ?

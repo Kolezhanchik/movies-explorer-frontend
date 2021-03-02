@@ -60,9 +60,13 @@
     outline: none;
 }
 
-.login-form__input:invalid{
+.login-form__input_invalid{
     color: #FF3055;
+    background-color: rgba(255, 48, 85, 0.02);
+    outline: rgb(255, 48, 85, 0.2) 1px solid;
+    border-radius: 8px;
 }
+
 
 .login-form__err-msg{
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
@@ -72,7 +76,7 @@
     line-height: 12px;
     color: #FF3055;
     position: absolute;
-    bottom: -5px;
+    bottom: -3px;
     left: 0;
 }
 

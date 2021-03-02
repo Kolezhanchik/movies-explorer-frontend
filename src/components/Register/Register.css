@@ -42,6 +42,7 @@
     position: relative;
 }
 
+
 .registration-form__input{
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     font-style: normal;
@@ -57,11 +58,20 @@
     background: #F9F9F9;
     border-radius: 8px;
     border: none;
-    outline: none;
+    outline:none;
 }
 
-.registration-form__input:invalid{
+
+/* .registration-form__input:valid{
+    background-color: rgba(43, 224, 128, 0.02);
+    outline: rgba(43, 224, 128, 0.2) 1px solid;
+} */
+
+.registration-form__input_invalid{
     color: #FF3055;
+    background-color: rgba(255, 48, 85, 0.02);
+    outline: rgb(255, 48, 85, 0.2) 1px solid;
+    border-radius: 8px;
 }
 
 .registration-form__err-msg{
@@ -72,7 +82,7 @@
     line-height: 12px;
     color: #FF3055;
     position: absolute;
-    bottom: 5px;
+    bottom: -3px;
     left: 0;
 }
 

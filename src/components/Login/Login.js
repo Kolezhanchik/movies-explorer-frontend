@@ -21,7 +21,9 @@ function Login(props) {
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
-                    className="login-form__input"
+                    className={mailErrorMessage ?
+                        "login-form__input login-form__input_invalid"
+                        : "login-form__input"}
                 />
                 <span
                     className={mailErrorMessage ?
@@ -37,7 +39,9 @@ function Login(props) {
                     required
                     value={password}
                     onChange={(e) => { setPassword(e.target.value); setPassErrorMessage(e.target.validationMessage) }}
-                    className="login-form__input"
+                    className={passErrorMessage ?
+                        "login-form__input login-form__input_invalid"
+                        : "login-form__input"}
                 />
                 <span
                     className={passErrorMessage ?
