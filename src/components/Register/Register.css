@@ -62,16 +62,21 @@
 }
 
 
-/* .registration-form__input:valid{
+.registration-form__input:valid{
     background-color: rgba(43, 224, 128, 0.02);
     outline: rgba(43, 224, 128, 0.2) 1px solid;
-} */
+}
 
 .registration-form__input_invalid{
     color: #FF3055;
     background-color: rgba(255, 48, 85, 0.02);
     outline: rgb(255, 48, 85, 0.2) 1px solid;
     border-radius: 8px;
+}
+
+.registration-form__input:focus{
+    background-color: rgb(52 86 243 / 4%);
+    border-radius: 12px;
 }
 
 .registration-form__err-msg{

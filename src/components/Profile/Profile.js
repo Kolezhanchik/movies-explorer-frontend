@@ -27,10 +27,7 @@ function Profile(props) {
                         "profile-form__input profile-form__input_invalid"
                         : "profile-form__input"}
                 />
-                <span
-                    className={nameErrorMessage ?
-                        "profile-form__err-msg profile-form__err-msg_active"
-                        : "profile-form__err-msg"}>{nameErrorMessage}</span>
+                
             </label>
             <label className="profile-form__label">
                 <span className="profile-form__text">Почта</span>
@@ -44,10 +41,7 @@ function Profile(props) {
                         "profile-form__input profile-form__input_invalid"
                         : "profile-form__input"}
                 />
-                <span
-                    className={mailErrorMessage ?
-                        "profile-form__err-msg profile-form__err-msg_active"
-                        : "profile-form__err-msg"}>{mailErrorMessage}</span>
+                
             </label>
             {!edit ?
                 <div className="profile-form__wrap">
@@ -61,11 +55,17 @@ function Profile(props) {
                         className="profile-form__link">Выйти из аккаунта</Link>
                 </div>
                 :
+                <div className="profile-form__wrap">
+                    <span
+                    className={(mailErrorMessage || nameErrorMessage) ?
+                        "profile-form__err-msg profile-form__err-msg_active"
+                        : "profile-form__err-msg"}>{mailErrorMessage || nameErrorMessage}</span>
                 <input
                     type="submit"
                     disabled={(mailErrorMessage || nameErrorMessage)}
                     className="profile-form__submit"
                     value="Сохранить" />
+                    </div>
             }
         </form>
     );

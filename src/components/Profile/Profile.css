@@ -66,11 +66,16 @@
     outline: rgb(255, 48, 85, 0.2) 1px solid;
     border-radius: 8px;
 }
-/* 
+
 .profile-form__input:focus{
     background-color: rgb(52 86 243 / 4%);
     border-radius: 12px;
-} */
+}
+
+.profile-form__input:valid{
+    background-color: rgba(43, 224, 128, 0.02);
+    outline: rgba(43, 224, 128, 0.2) 1px solid;
+}
 
 .profile-form__err-msg{
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
@@ -80,9 +85,9 @@
     line-height: 12px;
     color: #FF3055;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
+    bottom: 50px;
+    left: 17px;
+    text-align: left;
 }
 
 .profile-form__wrap{
