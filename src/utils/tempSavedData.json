@@ -1,0 +1,67 @@
+[
+    {
+          "id": 4,
+          "nameRU": "Баския: Взрыв реальности",
+          "nameEN": "Banksy Most Wanted",
+          "director": "Симус Хейли",
+          "country": "США",
+          "year": "2010",
+          "duration": 81,
+          "description": "Баския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальности",
+          "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+          "created_at": "2020-11-23T14:12:21.376Z",
+          "updated_at": "2020-11-23T14:12:21.376Z",
+          "image": {
+                "url": "https://raw.githubusercontent.com/KoLenhen/movies-explorer-frontend/level-2/src/images/cards/pic__COLOR_pic-1.png"
+          }
+    },
+    {
+          "id": 6,
+          "nameRU": "Книготорговцы",
+          "nameEN": "Banksy Most Wanted",
+          "director": "Симус Хейли",
+          "country": "США",
+          "year": "2010",
+          "duration": 97,
+          "description": "КниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцы",
+          "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+          "created_at": "2020-11-23T14:12:21.376Z",
+          "updated_at": "2020-11-23T14:12:21.376Z",
+          "image": {
+                "url": "https://raw.githubusercontent.com/KoLenhen/movies-explorer-frontend/level-2/src/images/cards/pic__COLOR_pic-9.png"
+          }
+    },
+    {
+          "id": 8,
+          "nameRU": "Фильм Gimme Danger. История Игги и The Stooges",
+          "nameEN": "Banksy Most Wanted",
+          "director": "Симус Хейли",
+          "country": "США",
+          "year": "2010",
+          "duration": 102,
+          "description": "Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...",
+          "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+          "created_at": "2020-11-23T14:12:21.376Z",
+          "updated_at": "2020-11-23T14:12:21.376Z",
+          "image": {
+                "url": "https://raw.githubusercontent.com/KoLenhen/movies-explorer-frontend/level-2/src/images/cards/pic__COLOR_pic-6.png"
+          }
+    },
+    {
+          "id": 9,
+          "nameRU": "Дженис: Маленькая девочка грустит",
+          "nameEN": "Banksy Most Wanted",
+          "director": "Симус Хейли",
+          "country": "США",
+          "year": "2010",
+          "duration": 70,
+          "description": "Дженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка грустит",
+          "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+          "created_at": "2020-11-23T14:12:21.376Z",
+          "updated_at": "2020-11-23T14:12:21.376Z",
+          "image": {
+                "url": "https://raw.githubusercontent.com/KoLenhen/movies-explorer-frontend/level-2/src/images/cards/pic__COLOR_pic-10.png"
+            }
+        }
+  ]
+  

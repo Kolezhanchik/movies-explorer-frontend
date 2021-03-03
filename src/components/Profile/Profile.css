@@ -1,0 +1,194 @@
+.profile-form{
+    padding: 67px 0 70px;
+    max-width: 410px;
+    margin: 0 auto;
+    text-align: center;  
+    min-height: 62vh;
+    position: relative;
+}
+
+.profile-form__title{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    padding: 0 0 108px 0;
+    margin: 0;
+}
+
+.profile-form__label{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+    position: relative;
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-form__text{
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+}
+
+.profile-form__label:not(:last-of-type) {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.profile-form__input{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    color: #000000;
+    width: 80%;
+    display: block;
+    padding: 16px 0;
+    margin: 0 0 0 auto;    
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.profile-form__input_invalid{
+    color: #FF3055;
+    background-color: rgba(255, 48, 85, 0.02);
+    outline: rgb(255, 48, 85, 0.2) 1px solid;
+    border-radius: 8px;
+}
+
+.profile-form__input:focus{
+    background-color: rgb(52 86 243 / 4%);
+    border-radius: 12px;
+}
+
+.profile-form__input:valid{
+    background-color: rgba(43, 224, 128, 0.02);
+    outline: rgba(43, 224, 128, 0.2) 1px solid;
+}
+
+.profile-form__err-msg{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FF3055;
+    position: absolute;
+    bottom: 50px;
+    left: 17px;
+    text-align: left;
+}
+
+.profile-form__wrap{
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
+
+.profile-form__btn{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    padding: 0 0 8px;
+    background: transparent;
+}
+
+.profile-form__btn:hover{    
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.profile-form__submit{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    background: #3456F3;
+    border-radius: 3px;
+    display: block;
+    width: 396px;
+    height: 45px;
+    padding: 0;
+    margin: 0 0 16px;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
+
+.profile-form__submit:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.profile-form__submit:disabled{
+    background: #F8F8F8;
+    cursor: none;
+    color: #C2C2C2;
+}
+
+.profile-form__link{
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #FF3055;
+    text-decoration: none;
+    margin: 0;
+    padding: 8px 0 0;
+}
+
+.profile-form__link:hover{    
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-form {
+        padding-top: 30%;
+        min-height: 80vh;
+    }
+
+    .profile-form__title {        
+        padding-bottom: 81px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile-form{
+        max-width: 85%;        
+    }
+    .profile-form__submit{
+        max-width: 100%; 
+    }
+}

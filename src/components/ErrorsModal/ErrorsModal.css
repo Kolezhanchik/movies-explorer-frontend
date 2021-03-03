@@ -1,0 +1,126 @@
+.errors-modal {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 2;
+    visibility: hidden;    
+    opacity: 0;
+    transition: visibility 1s, opacity 0.5s linear;
+}
+
+.errors-modal__opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.errors-modal__container {
+    margin: calc(50vh - 270px) auto 0;
+    max-width: 430px;   
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    padding: 34px 36px 36px;
+    box-sizing: border-box;
+}
+
+.errors-modal__close {
+    position: absolute;
+    top: -40px;
+    right: -45px;
+    font-size: 30px;
+    font-weight: 900;
+    -webkit-transition: all ease-in-out 0.6s;
+    -o-transition: all ease-in-out 0.6s;
+    transition: all ease-in-out 0.6s;
+    background-color: transparent;    
+    color: #ffffff;
+    border: none;
+}
+
+.errors-modal__close:hover {
+    -webkit-transform:rotate(180deg);
+        -ms-transform:rotate(180deg);
+            transform:rotate(180deg);
+    cursor: pointer;  
+    opacity: 0.7;
+
+}
+
+.errors-modal__close:focus {
+    outline: none;
+}
+
+
+.errors-modal__info{
+    width: 120px;
+    height: 120px;
+    margin: 26px auto 32px;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.errors-modal__info_negative{
+    background-image: url('../../images/negative.svg');
+ }
+
+.errors-modal__info_positive{
+    background-image: url('../../images/positive.svg');
+}
+
+.errors-modal__text {
+    color: #000000;
+    margin: 0;
+    padding: 0 0 24px 0;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+@media screen and (max-width: 540px) {
+    .errors-modal__close {
+        top: -38px;
+        right: -32px;
+    }
+ }
+
+@media screen and (max-width: 450px) {
+   .errors-modal__container {
+        max-width: 80%;
+        padding: 34px 20px 36px;
+  }
+  .errors-modal__text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .errors-modal__close {
+        top: -50px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        color: #ffffff;
+    }
+}
+
+

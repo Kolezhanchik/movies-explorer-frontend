@@ -1,0 +1,387 @@
+[
+      {
+            "id": 1,
+            "nameRU": "33 слова о дизайне 33 слова о дизайне 33 слова о дизайне",
+            "nameEN": "33 words about design",
+            "director": "Стивен Кайак ",
+            "country": "США",
+            "year": "2010",
+            "duration": 107,
+            "description": "33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "image": {
+                  "url": "/pic__COLOR_pic.png?raw=true"
+            }
+      },
+      {
+            "id": 2,
+            "nameRU": "Киноальманах «100 лет дизайна»",
+            "nameEN": "100 years of design",
+            "director": "Филипп Задорожный",
+            "country": "Russia",
+            "year": "2018",
+            "duration": 63,
+            "description": "100 years of design100 years of design100 years of design100 years of design100 years of design100 years of design100 years of design",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-4.png"
+            }
+      },
+      {
+            "id": 3,
+            "nameRU": "В погоне за Бенкси",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 102,
+            "description": "В погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за Бенкси",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-8.png"
+            }
+      },
+
+
+      {
+            "id": 4,
+            "nameRU": "Баския: Взрыв реальности",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 81,
+            "description": "Баския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальности",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-1.png"
+            }
+      },
+      {
+            "id": 5,
+            "nameRU": "Бег это свобода",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 104,
+            "description": "Бег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свобода",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-5.png"
+            }
+           },
+      {
+            "id": 6,
+            "nameRU": "Книготорговцы",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 97,
+            "description": "КниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцы",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-9.png"
+            }
+      },
+      {
+            "id": 7,
+            "nameRU": "Когда я думаю о Германии ночью",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 116,
+            "description": "Когда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночью",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-2.png"
+            }
+      },
+      {
+            "id": 8,
+            "nameRU": "Фильм Gimme Danger. История Игги и The Stooges",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 102,
+            "description": "Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-6.png"
+            }
+      },
+      {
+            "id": 9,
+            "nameRU": "Дженис: Маленькая девочка грустит",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 70,
+            "description": "Дженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка грустит",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-10.png"
+            }
+      },
+      {
+            "id": 10,
+            "nameRU": "Соберись перед прыжком",
+            "nameEN": "Соберись перед прыжком",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 64,
+            "description": "Соберись перед прыжкомСоберись перед прыжкомСоберись перед прыжкомСоберись перед прыжкомСоберись перед прыжком",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-3.png"
+            }
+      },
+      {
+            "id": 11,
+            "nameRU": "Пи Джей Харви: A dog called money",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 67,
+            "description": "Пи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called money",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-7.png"
+            }
+      },
+      {
+            "id": 12,
+            "nameRU": "По волнам: Искусство звука в кино",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 78,
+            "description": "По волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в кино",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-11.png"
+            }
+      },
+      {
+            "id": 13,
+            "nameRU": "33 слова о дизайне 33 слова о дизайне 33 слова о дизайне",
+            "nameEN": "33 words about design",
+            "director": "Стивен Кайак ",
+            "country": "США",
+            "year": "2010",
+            "duration": 107,
+            "description": "33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне33 слова о дизайне",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "image": {
+                  "url": "/pic__COLOR_pic.png?raw=true"
+            }
+      },
+      {
+            "id": 14,
+            "nameRU": "Киноальманах «100 лет дизайна»",
+            "nameEN": "100 years of design",
+            "director": "Филипп Задорожный",
+            "country": "Russia",
+            "year": "2018",
+            "duration": 63,
+            "description": "100 years of design100 years of design100 years of design100 years of design100 years of design100 years of design100 years of design",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-4.png"
+            }
+      },
+      {
+            "id": 15,
+            "nameRU": "В погоне за Бенкси",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 102,
+            "description": "В погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за БенксиВ погоне за Бенкси",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-8.png"
+            }
+      },
+
+
+      {
+            "id": 16,
+            "nameRU": "Баския: Взрыв реальности",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 81,
+            "description": "Баския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальностиБаския: Взрыв реальности",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-1.png"
+            }
+      },
+      {
+            "id": 17,
+            "nameRU": "Бег это свобода",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 104,
+            "description": "Бег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свободаБег это свобода",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-5.png"
+            }
+           },
+      {
+            "id": 18,
+            "nameRU": "Книготорговцы",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 97,
+            "description": "КниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцыКниготорговцы",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-9.png"
+            }
+      },
+      {
+            "id": 19,
+            "nameRU": "Когда я думаю о Германии ночью",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 116,
+            "description": "Когда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночьюКогда я думаю о Германии ночью",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-2.png"
+            }
+      },
+      {
+            "id": 20,
+            "nameRU": "Фильм Gimme Danger. История Игги и The Stooges",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 102,
+            "description": "Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...Gimme Danger: История Игги и The Stooge...",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-6.png"
+            }
+      },
+      {
+            "id": 21,
+            "nameRU": "Дженис: Маленькая девочка грустит",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 70,
+            "description": "Дженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка груститДженис: Маленькая девочка грустит",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-10.png"
+            }
+      },
+      {
+            "id": 22,
+            "nameRU": "Соберись перед прыжком",
+            "nameEN": "Соберись перед прыжком",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 64,
+            "description": "Соберись перед прыжкомСоберись перед прыжкомСоберись перед прыжкомСоберись перед прыжкомСоберись перед прыжком",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-3.png"
+            }
+      },
+      {
+            "id": 23,
+            "nameRU": "Пи Джей Харви: A dog called money",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 67,
+            "description": "Пи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called moneyПи Джей Харви: A dog called money",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-7.png"
+            }
+      },
+      {
+            "id": 24,
+            "nameRU": "По волнам: Искусство звука в кино",
+            "nameEN": "Banksy Most Wanted",
+            "director": "Симус Хейли",
+            "country": "США",
+            "year": "2010",
+            "duration": 78,
+            "description": "По волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в киноПо волнам: Искусство звука в кино",
+            "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+            "created_at": "2020-11-23T14:12:21.376Z",
+            "updated_at": "2020-11-23T14:12:21.376Z",
+            "image": {
+                  "url": "/pic__COLOR_pic-11.png"
+            }
+      }
+]
+
