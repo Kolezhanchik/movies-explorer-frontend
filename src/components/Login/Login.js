@@ -18,6 +18,8 @@ function Login(props) {
                 E-mail
                 <input
                     type="email"
+                    name="email"
+                    id="email"
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
@@ -36,6 +38,8 @@ function Login(props) {
                     minLength={2}
                     maxLength={8}
                     type="password"
+                    name="password"
+                    id="password"
                     required
                     value={password}
                     onChange={(e) => { setPassword(e.target.value); setPassErrorMessage(e.target.validationMessage) }}

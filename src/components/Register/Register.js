@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../images/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Register.css';
 
 function Register(props) {
@@ -22,6 +22,8 @@ function Register(props) {
                     minLength={2}
                     maxLength={25}
                     type="text"
+                    name="name"
+                    id="name"
                     required
                     value={name}
                     onChange={(e) => { setName(e.target.value); setNameErrorMessage(e.target.validationMessage) }}
@@ -38,6 +40,8 @@ function Register(props) {
                 E-mail
                 <input
                     type="email"
+                    name="email"
+                    id="email"
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
@@ -56,6 +60,8 @@ function Register(props) {
                     minLength={2}
                     maxLength={8}
                     type="password"
+                    name="password"
+                    id="password"
                     required
                     value={password}
                     onChange={(e) => { setPassword(e.target.value); setPassErrorMessage(e.target.validationMessage) }}

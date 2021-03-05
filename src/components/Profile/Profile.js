@@ -20,6 +20,8 @@ function Profile(props) {
                     minLength={2}
                     maxLength={25}
                     type="text"
+                    name="name"
+                    id="name"
                     required
                     value={name}
                     onChange={(e) => { setName(e.target.value); setNameErrorMessage(e.target.validationMessage) }}
@@ -34,6 +36,8 @@ function Profile(props) {
                 <input
                     disabled={disabled}
                     type="email"
+                    name="email"
+                    id="email"
                     required
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
