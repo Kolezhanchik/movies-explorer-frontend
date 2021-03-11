@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import tempCardsData from '../../utils/tempData.json';
@@ -6,31 +6,35 @@ import './Movies.css'
 
 function Movies(props) {
 
-    // const [tempCardsData, setTempCardsData] = useState([]);
+    const [cards, setCards] = useState([]);
+    const [cardList, setCardsList] = useState([]);
 
-    // function getMoviesTemp() {
-    //     return fetch(`https://api.nomoreparties.co/beatfilm-movies`);        
-    // }
+    useEffect(() => {
+        props.api.getInitialCards()
+            .then((res) => {
+                setCards(res);
+            })
+            .catch((error) => { alert(error) })
+            .finally(() => {
 
-    // getMoviesTemp()
-    //     .then((res) => {
-    //     if (res.ok) { return res.json(); }
-    //     return Promise.reject(res.status);
-    // })
-    // .then((res) => {
-    //    setTempCardsData(res);
-    // })
-    // .catch((err) => {
-    //     alert(err + "str 26");
-    // }); 
+            });
+
+    }, [props.api])
+
+    function handleSubmit(keyWord, isShort) {
+        setCardsList(props.handleSearch(cards, keyWord, isShort));
+    }
 
     return (
         <section className="movies">
-            <SearchForm />
+            <SearchForm
+                handleSearch={handleSubmit}
+            />
             <MoviesCardList
-                tempCardsData={tempCardsData}
-                // imageUrl={'https://api.nomoreparties.co'}
-                imageUrl={'https://raw.githubusercontent.com/KoLenhen/movies-explorer-frontend/level-2/src/images/cards'}
+                likeMovieHandler={props.likeMovieHandler}
+                dislikeMovieHandler={props.dislikeMovieHandler}
+                cardsData={cardList}
+                imageUrl={'https://api.nomoreparties.co'}
             />
         </section>
     );
