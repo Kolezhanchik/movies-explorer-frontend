@@ -15,7 +15,7 @@ function MoviesCardList(props) {
                     props.cardsData.slice(0, count).map((item) => {                        
                         return (                            
                             <MoviesCard
-                                key={item.id}
+                                key={item.id || item.movieId}
                                 data = {item}
                                 image={!!props.imageUrl ? props.imageUrl.concat(item.image.url): item.image}
                                 likeMovieHandler={props.likeMovieHandler}

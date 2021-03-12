@@ -2,8 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Route, Switch, useLocation, useHistory } from 'react-router-dom';
 import './App.css';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import Api from '../../utils/Api';
-import * as auth from '../../utils/auth';
+import mainApi from '../../utils/MainApi';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -18,23 +17,9 @@ import ErrorsModal from '../ErrorsModal/ErrorsModal';
 
 function App() {
 
-  const apiBM = new Api({
-    url: "https://api.nomoreparties.co/beatfilm-movies",
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  });
-
-  const apiMy = new Api({
-    // url: "https://api.movies-kolenhen.students.nomoredomains.icu",
-    url: 'http://localhost:3001',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-    }
-});
-
+  const history = useHistory();
+  const location = useLocation();
+  const [scrollPage, setScrollPage] = useState(0);
   const [token, setToken] = useState('');
   const [currentUser, setCurrentUser] = useState({
     isLoggedIn: null,
@@ -43,41 +28,6 @@ function App() {
     id: '',
     savedMoviesCards: [],
   });
-
-
-  const history = useHistory();
-  const location = useLocation();
-  const [scrollPage, setScrollPage] = useState(0);
-  // const [cardsData, setCardsData] = useState([]);
-  // const [savedCardsData, setSavedCardsData] = useState([]);
-
-  // get movies from beatfilm-movies api
-  // useEffect(() => {
-  //   apiBM.getInitialCards()
-  //   .then((res) => {
-  //     setCardsData(res);
-  //   })
-  //   .catch((error) => { alert(error)})
-  //   .finally(() =>{
-  //     // history.push('/movies')
-  //   });
-
-  // }, [history])
-
-  // get saved movies from own api
-
-  // useEffect(() => {
-  //   apiMy.getInitialCards('movies')
-  //   .then((res) => {
-  //     console.log(res);
-  //     setSavedCardsData(res);
-  //   })
-  //   .catch((error) => { alert(error)})
-  //   .finally(() =>{
-  //     history.push('/saved-movies')
-  //   });
-
-  // }, [history])
 
   // scroll up button
   useEffect(() => {
@@ -92,7 +42,7 @@ function App() {
   // register handler 
 
   function handleRegister(values) {
-    auth.register(values)
+    mainApi.register(values)
       .then((res) => {
         if (res) {
           history.push('/sign-in');
@@ -106,7 +56,7 @@ function App() {
   // login handler 
 
   function handleLogin(values) {
-    auth.login(values)
+    mainApi.login(values)
       .then((data) => {
         if (data.token) {
           localStorage.setItem('jwt', data.token);
@@ -128,7 +78,7 @@ function App() {
 
   function handleLogout(values) {
     console.log('logout');
-    auth.logout()
+    mainApi.logout()
       .then((res) => {
         if (res.ok) {
           localStorage.removeItem('jwt');
@@ -148,7 +98,7 @@ function App() {
   // edit user data handler 
   function handleUpdate(values) {
     const jwt = localStorage.getItem('jwt');
-    auth.update(values, jwt)
+    mainApi.update(values, jwt)
       .then((res) => {
         console.log(res);
       })
@@ -158,17 +108,23 @@ function App() {
   function likeMovieHandler(data) {
     const jwt = localStorage.getItem('jwt');
     // getUserData(jwt);
-    auth.addMovie(data, jwt)
+    mainApi.addMovie(data, jwt)
       .then((res) => {
-        // console.log(res);
+        currentUser.savedMoviesCards.push(res);
       })
   }
 
   function dislikeMovieHandler(data) {
+    const id = data._id 
+    || currentUser.savedMoviesCards.find(item => item.movieId === data.id)._id;
     const jwt = localStorage.getItem('jwt');
-    auth.delMovie(data._id, jwt)
+    mainApi.delMovie(id, jwt)
       .then((res) => {
-        // console.log(res);
+        setCurrentUser({
+          ...currentUser,
+          savedMoviesCards:
+            currentUser.savedMoviesCards.filter((item) => item.movieId !== res.movieId),
+        });
       })
   }
 
@@ -176,7 +132,9 @@ function App() {
   function handleSearch(cards, keyWord, isShort) {
     const tmpCards = [];
     isShort ? cards.forEach((item) => {
-      item.nameRU.toLowerCase().includes(keyWord) && item.duration < 60 && tmpCards.push(item);
+      item.nameRU.toLowerCase().includes(keyWord) 
+      && item.duration < 60 
+      && tmpCards.push(item);
     }) :
       cards.forEach((item) => {
         item.nameRU.toLowerCase().includes(keyWord) && tmpCards.push(item);
@@ -184,33 +142,17 @@ function App() {
     return tmpCards;
   }
 
-  const handleTokenCheck = useCallback(() => {
-    const token = localStorage.getItem('jwt');
-    setToken(token);
-    if (token) {
-      getUserData(token);
-    } else {
-      setCurrentUser({
-        isLoggedIn: false,
-          name: '',
-          email: '',
-          savedMoviesCards: [],
-      });
-    }
-  },
-    [setCurrentUser]
-  )
 
-  const getUserData = (tokenParam) => {
-    auth.tokenCheck(tokenParam)
-      .then((userData) => {
-        if (!!userData) {
+  const getUserData = useCallback((tokenParam) => {
+    Promise.all([mainApi.tokenCheck(tokenParam), mainApi.getInitialCards(tokenParam)])
+      .then(([userData, savedMovies]) => {
+        if (!!userData && !!savedMovies) {
           setCurrentUser({
             isLoggedIn: true,
             name: userData.name,
             email: userData.email,
             id: userData._id,
-            savedMoviesCards: [],
+            savedMoviesCards: savedMovies.filter((item) => item.owner === currentUser.id),
           });
         }
       })
@@ -223,26 +165,26 @@ function App() {
         });
         console.error(err);
       });
-  };
-  
+  }, [currentUser.id])
+
+  const handleTokenCheck = useCallback(() => {
+    const token = localStorage.getItem('jwt');
+    setToken(token);
+    if (token) {
+      getUserData(token);
+    } else {
+      setCurrentUser({
+        isLoggedIn: false,
+        name: '',
+        email: '',
+        savedMoviesCards: [],
+      });
+    }
+  }, [getUserData])
+
   useEffect(() => {
     handleTokenCheck();
   }, [handleTokenCheck]);
-
-  // useEffect(() => {    
-  //   console.log(currentUser.isLoggedIn);
-  //   if (currentUser.isLoggedIn ) getUserData(token);
-  // }, [currentUser.isLoggedIn, token]);
-
-  // useEffect(() => {
-  //   function handleRefresh() {
-  //     getUserData();
-  //   }
-  //   console.log(currentUser.isLoggedIn)
-  //   window.addEventListener("DOMContentLoaded", handleRefresh);
-  //   return () => window.removeEventListener("DOMContentLoaded", handleRefresh);
-  // }, [currentUser.isLoggedIn]);
-
 
   return (
     <div className="App">
@@ -260,15 +202,14 @@ function App() {
               handleSearch={handleSearch}
               likeMovieHandler={likeMovieHandler}
               dislikeMovieHandler={dislikeMovieHandler}
-              api={apiBM}
             />
           </Route>
           <Route path="/saved-movies">
             <SavedMovies
-            token = {token}
+              token={token}
               handleSearch={handleSearch}
               dislikeMovieHandler={dislikeMovieHandler}
-              api={apiMy}
+              setCurrentUser={setCurrentUser}
             />
           </Route>
           <Route path="/profile">

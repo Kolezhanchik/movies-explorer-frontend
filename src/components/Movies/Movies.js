@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import tempCardsData from '../../utils/tempData.json';
+import moviesApi from '../../utils/MoviesApi';
 import './Movies.css'
 
 function Movies(props) {
 
     const [cards, setCards] = useState([]);
     const [cardList, setCardsList] = useState([]);
-
+    
     useEffect(() => {
-        props.api.getInitialCards()
+        moviesApi.getInitialCards()
             .then((res) => {
                 setCards(res);
             })
@@ -19,7 +19,7 @@ function Movies(props) {
 
             });
 
-    }, [props.api])
+    }, [])
 
     function handleSubmit(keyWord, isShort) {
         setCardsList(props.handleSearch(cards, keyWord, isShort));
