@@ -60,7 +60,8 @@ function Login(props) {
                         : "login-form__err-msg"}>{errors.password}</span>
             </label>
             <div className="login-form__wrap">
-                <input type="submit"
+                <input 
+                    type="submit"
                     disabled={!isValid}
                     className="login-form__submit" value="Войти"
                 />

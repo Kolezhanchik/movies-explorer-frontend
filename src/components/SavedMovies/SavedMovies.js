@@ -1,40 +1,52 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Preloader from "../Preloader/Preloader";
+import ErrorsModal from "../ErrorsModal/ErrorsModal";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-// import mainApi from '../../utils/MainApi';
 import './SavedMovies.css';
 
 function SavedMovies(props) {
     const currentUser = useContext(CurrentUserContext);
-    const [cardList, setCardsList] = useState(currentUser.savedMoviesCards);
+    const [cardList, setCardsList] = useState([]);
+    const [savedMovieEerorMessage, setSavedMovieEerorMessage] = useState('');
+    const [savedMovieType, setSavedMovieType] = useState(false);
+    const [savedMovieIsOpen, setSavedMovieIsOpen] = useState(false);
 
     function handleSubmit(keyWord, isShort) {
-        setCardsList(props.handleSearch(currentUser.savedMoviesCards, keyWord, isShort));
+        const found = props.handleSearch(currentUser.savedMoviesCards, keyWord, isShort);
+        setCardsList(found);
+        if (found < 1) {
+            setSavedMovieIsOpen(true);
+            setSavedMovieType(false);
+            setSavedMovieEerorMessage('Ничего не найдено');
+        }
     }
 
-    // function handleDelMovie(movieId) {
-    //     props.setCurrentUser({
-    //         ...currentUser,
-    //         savedMoviesCards: currentUser.savedMoviesCards.filter((item) => item.movieId !== movieId && item.owner === currentUser.id),
-    //     });
-    // }
-
-    useEffect(() => {
-        setCardsList(currentUser.savedMoviesCards);
-    }, [currentUser.savedMoviesCards])
+    function handleDelMovie(data) {
+        props.dislikeMovieHandler(data);
+        setCardsList(currentUser.savedMoviesCards.filter((item) => item.movieId !== data.movieId));
+    }
 
     return (
-        <section className="movies">
-            <SearchForm
-                handleSearch={handleSubmit}
-            />
-            <MoviesCardList
-                cardsData={cardList}
-                dislikeMovieHandler={props.dislikeMovieHandler}
-                // handleDelMovie={handleDelMovie}
-            />
-        </section>
+        props.isPreloader ? <Preloader /> :
+            <section className="movies-saved">
+                <SearchForm
+                    handleSearch={handleSubmit}
+                    lastKeyWord={props.lastKeyWord}
+                />
+                {savedMovieIsOpen ? <ErrorsModal
+                    isOpen={savedMovieIsOpen || props.isOpen}
+                    errorMessage={savedMovieEerorMessage || props.errorMessage}
+                    type={savedMovieType || props.type}
+                    setIsOpen={setSavedMovieIsOpen || props.setIsOpen}
+                />
+                    :
+                    <MoviesCardList
+                        cardsData={cardList}
+                        dislikeMovieHandler={handleDelMovie}
+                    />}
+            </section>
     );
 }
 

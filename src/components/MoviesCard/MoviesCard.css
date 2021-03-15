@@ -16,8 +16,13 @@
 }
 
 .movies-card__trailer{
-    background-image: url('../../images/play.svg');
+    background-color: azure;
     display: inline-block;
+    width: 100%;
+}
+
+.movies-card__trailer:hover{
+    background-image: url('../../images/play.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 13%;
@@ -152,14 +157,17 @@
     }
 
 }
-@media screen and (max-width: 1136px) and (min-width: 840px) {
+
+@media screen and (max-width: 767px){
+    .movies-card, .movies-card__image {
+        width: 100%;     
+    }
+} 
+
+@media screen and (max-width: 690px) and (min-width: 375px) {
     .movies-card, .movies-card__image {
         width: 364px;     
     }
 } 
 
-@media screen and (max-width: 767px){
-    .movies-card, .movies-card__image {
-        width: 364px;     
-    }
-} 
+

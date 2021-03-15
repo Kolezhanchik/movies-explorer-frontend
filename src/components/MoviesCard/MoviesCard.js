@@ -10,9 +10,9 @@ function MoviesCard(props) {
         currentUser.savedMoviesCards.findIndex(item => item.movieId === props.data.id) > -1);
     const location = useLocation();
 
-    function handleLikeClick() {
-        setIsLiked(true);
+    function handleLikeClick() {        
         props.likeMovieHandler(props.data);
+        setIsLiked(true);
     }
 
     function handleDisLikeClick() {

@@ -159,7 +159,7 @@
         line-height: 22px;
     }
 
-    .navigation__link_profile-main-mob, .navigation__link_profile_mob {        
+    .navigation__link_profile-main-mob, .navigation__link_profile-mob, .navigation__link_profile_mob {        
         margin: auto auto 0;
         font-size: 13px;
         line-height: 2.2;

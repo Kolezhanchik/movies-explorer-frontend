@@ -4,8 +4,9 @@ import './SearchForm.css';
 
 function SearchForm(props) {
 
-    const [keyWord, setKeyWord] = useState('');
+    const [keyWord, setKeyWord] = useState(props.lastKeyWord || '');
     const [isShort, setIsShort] = useState(false);
+    const [isShown, setIsShown] = useState(false);
 
     function handleChange(event) {
         event.preventDefault();
@@ -15,22 +16,27 @@ function SearchForm(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.handleSearch(keyWord, isShort);
+        !keyWord ? setIsShown(true) : props.handleSearch(keyWord, isShort);
     }
 
     return (
         <form className="search-form" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Фильм"
-                onChange={handleChange}
-                className="search-form__input"
-            />
-            <input
+            <label className="search-form__label">
+                <input
+                    type="text"
+                    placeholder={keyWord||"Фильм"}
+                    onChange={handleChange}
+                    className="search-form__input"
+                />
+                {isShown && !keyWord && <span className="search-form__err-msg">
+                    Нужно ввести ключевое слово
+            </span>}
+            </label>
+            <button
                 value="Найти"
                 type="submit"
                 className="search-form__btn"
-            />
+            >Найти</button>
             <label className="search-form__label search-form__label_checkbox">
                 <input
                     type="checkbox"

@@ -3,6 +3,13 @@ class MainApi {
         this._url = optionsUrl;
     }
 
+    _handleResponse(res) {
+        return new Promise((resolve, reject) => {
+            const func = res.status < 400 ? resolve : reject;
+            res.json().then(data => func(data))
+          });
+      }
+
     getInitialCards(token) {
         return fetch(`${this._url}/movies`, {
             method: 'GET',
@@ -12,11 +19,7 @@ class MainApi {
                 'Authorization': `Bearer ${token}`,
             },
         })
-            .then((res) => {
-                if (res.ok) { return res.json(); }
-
-                return Promise.reject(`Error happen ${res.status}`)
-            })
+        .then(this._handleResponse);
 
     }
 
@@ -28,20 +31,10 @@ class MainApi {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     };
 
     register = (data) => {
-        console.log(data);
         return fetch(`${this._url}/signup`, {
             method: 'POST',
             headers: {
@@ -53,16 +46,7 @@ class MainApi {
                 name: data.name,
                 password: data.password
             }),
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     };
 
     login = (data) => {
@@ -77,19 +61,8 @@ class MainApi {
                 email: data.email,
                 password: data.password
             }),
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     };
-
-
 
     update = (data, jwt) => {
         return fetch(`${this._url}/users/me`, {
@@ -103,16 +76,7 @@ class MainApi {
                 name: data.name,
                 email: data.email
             })
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     }
 
     delMovie = (movieId, jwt) => {
@@ -123,16 +87,7 @@ class MainApi {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${jwt}`,
             }
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     }
 
     addMovie = (data, jwt) => {
@@ -156,21 +111,8 @@ class MainApi {
                 nameRU: data.nameRU,
                 nameEN: data.nameEN
             })
-        })
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Error ${res.status}`);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        }).then(this._handleResponse);
     }
-
-    logout = (req, res) =>
-        res.status(200).clearCookie('jwt').send({ message: 'Выход из приложенения выполнен' });
-
 }
 
 const mainApi = new MainApi(
