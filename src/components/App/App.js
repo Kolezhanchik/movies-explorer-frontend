@@ -27,7 +27,7 @@ function App() {
   const [token, setToken] = useState('');
   const [lastKeyWord, setLastKeyWord] = useState('');
   const [currentUser, setCurrentUser] = useState({
-    isLoggedIn: null,
+    isLoggedIn: true,
     name: '',
     email: '',
     id: '',
@@ -71,13 +71,15 @@ function App() {
   function handleLogin(values) {
     mainApi.login(values)
       .then((data) => {
-        if (data) {
-          history.push('/movies');
-        }
         if (data.token) {
           localStorage.setItem('jwt', data.token);
           getUserData(data.token);
           setToken(data.token);
+          setCurrentUser({
+            ...currentUser,
+            isLoggedIn: true,           
+          });
+          history.push('/movies');
         }
       })
       .catch((error) => {

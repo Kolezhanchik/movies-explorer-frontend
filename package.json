@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r ./build/* movies-kolenhen@84.201.149.80:/home/kolenh778/react-mesto-api-full/news-frontend;"
   },
   "eslintConfig": {
     "extends": [

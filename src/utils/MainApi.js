@@ -14,9 +14,8 @@ class MainApi {
         return fetch(`${this._url}/movies`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
             },
         })
         .then(this._handleResponse);
@@ -27,9 +26,8 @@ class MainApi {
         return fetch(`${this._url}/users/me`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
             },
         }).then(this._handleResponse);
     };
@@ -38,8 +36,7 @@ class MainApi {
         return fetch(`${this._url}/signup`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 email: data.email,
@@ -53,8 +50,7 @@ class MainApi {
         return fetch(`${this._url}/signin`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 _id: data.id,
@@ -68,9 +64,8 @@ class MainApi {
         return fetch(`${this._url}/users/me`, {
             method: 'PUT',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${jwt}`,
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${jwt}`,
             },
             body: JSON.stringify({
                 name: data.name,
@@ -83,9 +78,8 @@ class MainApi {
         return fetch(`${this._url}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${jwt}`,
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${jwt}`,
             }
         }).then(this._handleResponse);
     }
@@ -94,9 +88,8 @@ class MainApi {
         return fetch(`${this._url}/movies`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${jwt}`,
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${jwt}`,
             },
             body: JSON.stringify({
                 country: data.country,
@@ -116,8 +109,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi(
-    // url: "https://api.movies-kolenhen.students.nomoredomains.icu",
-    'http://localhost:3001',
+    "https://api.movies-kolenhen.students.nomoredomains.icu",
+    // 'http://localhost:3001',
 
 );
 
