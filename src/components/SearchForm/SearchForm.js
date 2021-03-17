@@ -24,9 +24,10 @@ function SearchForm(props) {
             <label className="search-form__label">
                 <input
                     type="text"
-                    placeholder={keyWord||"Фильм"}
+                    placeholder={"Фильм"}
                     onChange={handleChange}
                     className="search-form__input"
+                    value={keyWord||''}
                 />
                 {isShown && !keyWord && <span className="search-form__err-msg">
                     Нужно ввести ключевое слово

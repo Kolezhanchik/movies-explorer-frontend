@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* movies-kolenhen@84.201.149.80:/home/kolenh778/react-mesto-api-full/news-frontend;"
+    "deploy": "npm run build && scp -r ./build/* kolenhen@178.154.214.253:/home/kolenhen/frontend"
   },
   "eslintConfig": {
     "extends": [
@@ -25,6 +25,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "https://api.kolenhen.students.nomoredomains.icu",
   "browserslist": {
     "production": [
       ">0.2%",

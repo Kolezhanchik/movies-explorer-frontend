@@ -109,7 +109,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi(
-    "https://api.movies-kolenhen.students.nomoredomains.icu",
+    "https://api.kolenmov.students.nomoredomains.icu",
     // 'http://localhost:3001',
 
 );

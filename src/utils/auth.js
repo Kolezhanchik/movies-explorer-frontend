@@ -1,5 +1,5 @@
-// export const BASE_URL = 'https://api.movies-kolenhen.students.nomoredomains.icu';
-export const BASE_URL = 'http://localhost:3001';
+export const BASE_URL = 'https://api.kolenmov.students.nomoredomains.icu';
+// export const BASE_URL = 'http://localhost:3001';
 
 export const tokenCheck = (token) => {
     return fetch(`${BASE_URL}/users/me`, {
