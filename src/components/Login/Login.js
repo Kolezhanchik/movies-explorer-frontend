@@ -1,34 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../images/logo.svg';
+import {useCustomFormValidation} from '../../hooks/useCustomForm';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login(props) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [passErrorMessage, setPassErrorMessage] = useState('');
-    const [mailErrorMessage, setMailErrorMessage] = useState('');
+    const { values, handleChange, errors, isValid, resetForm } = useCustomFormValidation();
 
+    function handleSubmit(event){
+        event.preventDefault(event);
+        props.handleLogin(values);
+        resetForm();
+    }
 
     return (
-        <form className="login-form" noValidate>
+        <form 
+        className="login-form" 
+        onSubmit = {handleSubmit}
+        noValidate
+        >
             <Link to='/'> <img src={logo} alt="Логотип" className="login-form__logo" /> </Link>
             <h1 className="login-form__title">Рады видеть!</h1>  
             <label className="login-form__label">
                 E-mail
                 <input
                     type="email"
+                    name="email"
+                    id="email"
                     required
-                    value={email}
-                    onChange={(e) => { setEmail(e.target.value); setMailErrorMessage(e.target.validationMessage); }}
-                    className={mailErrorMessage ?
+                    value={values.email}
+                    onChange={handleChange}
+                    className={errors.email ?
                         "login-form__input login-form__input_invalid"
                         : "login-form__input"}
                 />
                 <span
-                    className={mailErrorMessage ?
+                    className={errors.email ?
                         "login-form__err-msg login-form__err-msg_active"
-                        : "login-form__err-msg"}>{mailErrorMessage}</span>
+                        : "login-form__err-msg"}>{errors.email}</span>
             </label>            
             <label className="login-form__label">
                 Пароль
@@ -36,22 +45,24 @@ function Login(props) {
                     minLength={2}
                     maxLength={8}
                     type="password"
+                    name="password"
+                    id="password"
                     required
-                    value={password}
-                    onChange={(e) => { setPassword(e.target.value); setPassErrorMessage(e.target.validationMessage) }}
-                    className={passErrorMessage ?
+                    value={values.password}
+                    onChange={handleChange}
+                    className={errors.password ?
                         "login-form__input login-form__input_invalid"
                         : "login-form__input"}
                 />
                 <span
-                    className={passErrorMessage ?
+                    className={errors.password  ?
                         "login-form__err-msg login-form__err-msg_active"
-                        : "login-form__err-msg"}>{passErrorMessage}</span>
+                        : "login-form__err-msg"}>{errors.password}</span>
             </label>
             <div className="login-form__wrap">
-                <input type="submit"
-                    disabled={(passErrorMessage || mailErrorMessage)
-                        || !(email && password)}
+                <input 
+                    type="submit"
+                    disabled={!isValid}
                     className="login-form__submit" value="Войти"
                 />
                 <span className="login-form__text">Ещё не зарегистрированы?&nbsp;<Link to="/sign-up" className="login-form__link">Регистрация</Link></span>

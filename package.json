@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r ./build/* kolenhen@178.154.214.253:/home/kolenhen/frontend"
   },
   "eslintConfig": {
     "extends": [
@@ -24,6 +25,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "https://api.kolenhen.students.nomoredomains.icu",
   "browserslist": {
     "production": [
       ">0.2%",

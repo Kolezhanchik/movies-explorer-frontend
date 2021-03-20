@@ -1,32 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
-// import Preloader from '../Preloader/Preloader';
 import './MoviesCardList.css';
 
 
 function MoviesCardList(props) {
     const [count, setCount] = useState(12);
+    const [countAdd, setCountAdd] = useState(3);
+    const [windowWidth, setWindowWidth] = useState(undefined);
 
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+            if (windowWidth < 1020 && windowWidth > 690) {
+                setCount(8);
+                setCountAdd(2);
+            }
+            (windowWidth < 690)&&setCount(5);
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, [windowWidth]);
+    
     return (
         <section className="movies-list">
-            {/* <Preloader/> || */}
             <div className="movies-list__cards">
                 {
-                    props.tempCardsData.slice(0, count).map((item) => {
+                    props.cardsData.slice(0, count).map((item) => {
                         return (
                             <MoviesCard
-                                key={item.id}
-                                name={item.nameRU}
-                                // image={`https://api.nomoreparties.co${item.image.url}`}
-                                image={props.imageUrl.concat(item.image.url)}
-                                duration={item.duration}
+                                key={item.id || item.movieId}
+                                data={item}
+                                image={!!props.imageUrl ? props.imageUrl.concat(item.image.url) : item.image}
+                                likeMovieHandler={props.likeMovieHandler}
+                                dislikeMovieHandler={props.dislikeMovieHandler}
+                                handleDelMovie={props.handleDelMovie}
                             />
                         )
                     })
 
                 }
             </div>
-            {props.tempCardsData.length > count && <button onClick={() => setCount(count + 6)} className="movies-list__btn">Ещё</button>}
+            {props.cardsData.length > count && <button onClick={() => setCount(count + countAdd)} className="movies-list__btn">Ещё</button>}
         </section>
     );
 }
